@@ -1,0 +1,21 @@
+{
+    "name": "deep-copy",
+    "version": "1.0.0",
+    "description": "Deep copy any object or array.",
+    "keywords": ["deep", "copy", "object", "array"],
+    "license": "MIT",
+    "homepage": "http://github.com/simov/deep-copy/",
+    "author": {
+        "name": "simo",
+        "email": "simeonvelichkov@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/simov/deep-copy.git"
+    },
+    "devDependencies": {
+        "mocha": "*",
+        "chai": "*"
+    },
+    "main": "./lib/dcopy"
+}
