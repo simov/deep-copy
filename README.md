@@ -6,13 +6,13 @@ Deep copy any object or array.
 ##Install
 Note that you can use this module with commonjs (nodejs), amdjs or as a global object.
 
-```shell
+```bash
 $ bower install deep-copy
 ```
 
 or
 
-```shell
+```bash
 $ npm install deep-copy
 ```
 
