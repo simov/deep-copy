@@ -28,7 +28,7 @@
             , last = add(copy, key, value)
           read(obj, last)
         }
-        else if (obj instanceof Object) {
+        else if (obj instanceof Object && typeof obj !== 'function') {
           var value = {}
             , last = add(copy, key, value)
           read(obj, last)

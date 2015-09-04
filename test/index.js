@@ -10,7 +10,8 @@ describe('deep-copy', function () {
     c: {
       a: 0,
       b: 1,
-    }
+    },
+    d: function () {}
   }
   var arr = [
     0,
@@ -35,5 +36,11 @@ describe('deep-copy', function () {
     copy[2].b = {d: 15}
     should.deepEqual(arr[2].b, {c: 1})
     should.deepEqual(copy[2].b, {d: 15})
+  })
+
+  it('preserve functions', function () {
+    var copy = dcopy(obj)
+    obj.d.should.be.type('function')
+    copy.d.should.be.type('function')
   })
 })
