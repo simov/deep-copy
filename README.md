@@ -1,19 +1,17 @@
 
-# deep-copy
+# deep-copy [![npm-version]][npm]
 
-Deep copy objects and arrays
-
-
-## Usage
-
-Pass in some object
 
 ```js
-var copy = dcopy({a:{b:[{c:5}]}});
+var dcopy = require('deep-copy')
+
+// deep copy object
+var copy = dcopy({a:{b:[{c:5}]}})
+
+// deep copy array
+var copy = dcopy([1,2,{a:{b:5}}])
 ```
 
-Or array
 
-```js
-var copy = dcopy([1,2,{a:{b:5}}]);
-```
+  [npm-version]: http://img.shields.io/npm/v/deep-copy.svg?style=flat-square (NPM Version)
+  [npm]: https://www.npmjs.org/package/deep-copy
