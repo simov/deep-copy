@@ -10,9 +10,8 @@
 }('dcopy', this, function () {
   var api = {}
 
-
   /**
-   * Deep copy any object or array.
+   * Deep copy any object or array
    *
    * @param {Object/Array} target
    * @return {Object/Array} copy
@@ -25,14 +24,16 @@
       for (var key in target) {
         var obj = target[key]
         if (obj instanceof Array) {
-          var value = [],
-            last = add(copy, key, value)
+          var value = []
+            , last = add(copy, key, value)
           read(obj, last)
-        } else if (obj instanceof Object) {
-          var value = {},
-            last = add(copy, key, value)
+        }
+        else if (obj instanceof Object) {
+          var value = {}
+            , last = add(copy, key, value)
           read(obj, last)
-        } else {
+        }
+        else {
           var value = obj
           add(copy, key, value)
         }
@@ -42,7 +43,7 @@
   }
 
   /**
-   * Adds a value to the copy object based on its type.
+   * Adds a value to the copy object based on its type
    *
    * @api private
    */
@@ -51,12 +52,12 @@
     if (copy instanceof Array) {
       copy.push(value)
       return copy[copy.length-1]
-    } else if (copy instanceof Object) {
+    }
+    else if (copy instanceof Object) {
       copy[key] = value
       return copy[key]
     }
   }
-
 
   return api.dcopy
 }))
