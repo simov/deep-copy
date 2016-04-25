@@ -1,5 +1,5 @@
 
-var should = require('should')
+var t = require('assert')
 var dcopy = require('../')
 
 
@@ -27,20 +27,20 @@ describe('deep-copy', function () {
   it('deep copy object', function () {
     var copy = dcopy(obj)
     copy.c = {c: 15}
-    should.deepEqual(obj.c, {a: 0, b: 1})
-    should.deepEqual(copy.c, {c: 15})
+    t.deepEqual(obj.c, {a: 0, b: 1})
+    t.deepEqual(copy.c, {c: 15})
   })
 
   it('deep copy array', function () {
     var copy = dcopy(arr)
     copy[2].b = {d: 15}
-    should.deepEqual(arr[2].b, {c: 1})
-    should.deepEqual(copy[2].b, {d: 15})
+    t.deepEqual(arr[2].b, {c: 1})
+    t.deepEqual(copy[2].b, {d: 15})
   })
 
   it('preserve functions', function () {
     var copy = dcopy(obj)
-    obj.d.should.be.type('function')
-    copy.d.should.be.type('function')
+    t.ok(typeof obj.d === 'function')
+    t.ok(typeof copy.d === 'function')
   })
 })
