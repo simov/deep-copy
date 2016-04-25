@@ -1,7 +1,7 @@
 
 # deep-copy
 
-[![npm-version]][npm]
+[![npm-version]][npm] [![travis-ci]][travis] [![coveralls-status]][coveralls]
 
 
 ```js
@@ -16,4 +16,9 @@ var copy = dcopy([1, 2, {a: {b: 5}}])
 
 
   [npm-version]: http://img.shields.io/npm/v/deep-copy.svg?style=flat-square (NPM Version)
+  [travis-ci]: https://img.shields.io/travis/simov/deep-copy/master.svg?style=flat-square (Build Status)
+  [coveralls-status]: https://img.shields.io/coveralls/simov/deep-copy.svg?style=flat-square (Test Coverage)
+
   [npm]: https://www.npmjs.org/package/deep-copy
+  [travis]: https://travis-ci.org/simov/deep-copy
+  [coveralls]: https://coveralls.io/r/simov/deep-copy?branch=master
