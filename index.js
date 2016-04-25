@@ -1,8 +1,8 @@
 
-(function (name, root, factory) {
-  if (typeof exports == 'object') {
+;(function (name, root, factory) {
+  if (typeof exports === 'object') {
     module.exports = factory()
-  } else if (typeof define == 'function' && define.amd) {
+  } else if (typeof define === 'function' && define.amd) {
     define(factory)
   } else {
     root[name] = factory()
@@ -25,12 +25,12 @@
         var obj = target[key]
         if (obj instanceof Array) {
           var value = []
-            , last = add(copy, key, value)
+          var last = add(copy, key, value)
           read(obj, last)
         }
         else if (obj instanceof Object && typeof obj !== 'function') {
           var value = {}
-            , last = add(copy, key, value)
+          var last = add(copy, key, value)
           read(obj, last)
         }
         else {
@@ -51,7 +51,7 @@
   function add (copy, key, value) {
     if (copy instanceof Array) {
       copy.push(value)
-      return copy[copy.length-1]
+      return copy[copy.length - 1]
     }
     else if (copy instanceof Object) {
       copy[key] = value
