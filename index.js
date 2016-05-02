@@ -2,23 +2,23 @@
 ;(function (name, root, factory) {
   if (typeof exports === 'object') {
     module.exports = factory()
-  } else if (typeof define === 'function' && define.amd) {
+  }
+  else if (typeof define === 'function' && define.amd) {
     define(factory)
-  } else {
+  }
+  else {
     root[name] = factory()
   }
 }('dcopy', this, function () {
-  var api = {}
-
   /**
-   * Deep copy any object or array
+   * Deep copy objects and arrays
    *
    * @param {Object/Array} target
    * @return {Object/Array} copy
    * @api public
    */
 
-  api.dcopy = function (target) {
+  return function (target) {
     var copy = (target instanceof Array) ? [] : {}
     ;(function read (target, copy) {
       for (var key in target) {
@@ -58,6 +58,4 @@
       return copy[key]
     }
   }
-
-  return api.dcopy
 }))
