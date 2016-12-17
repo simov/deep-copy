@@ -17,9 +17,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "coveralls": "^2.11.9",
-    "istanbul": "^0.4.3",
-    "mocha": "^2.4.5"
+    "coveralls": "^2.11.15",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
   },
   "main": "index.js",
   "files": [
@@ -31,5 +31,8 @@
     "test": "npm run test-ci",
     "test-ci": "mocha test/",
     "test-cov": "istanbul cover _mocha test/"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   }
 }
