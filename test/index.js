@@ -38,6 +38,21 @@ describe('deep-copy', function () {
     t.deepEqual(copy[2].b, {d: 15})
   })
 
+  it('preserve numbers', function () {
+    var copy = dcopy(42)
+    t.deepEqual(copy, 42)
+  })
+
+  it('preserve strings', function () {
+    var copy = dcopy("a")
+    t.deepEqual(copy, "a")
+  })
+
+  it('preserve booleans', function () {
+    var copy = dcopy(true)
+    t.deepEqual(copy, true)
+  })
+
   it('preserve functions', function () {
     var copy = dcopy(obj)
     t.ok(typeof obj.d === 'function')

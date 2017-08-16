@@ -20,6 +20,9 @@
    */
 
   return function (target) {
+    if (typeof target === 'number' || typeof target === 'string' || typeof target === 'boolean') {
+      return target;
+    }
     var copy = (target instanceof Array) ? [] : {}
     ;(function read (target, copy) {
       for (var key in target) {
