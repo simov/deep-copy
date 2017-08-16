@@ -44,8 +44,8 @@ describe('deep-copy', function () {
   })
 
   it('preserve strings', function () {
-    var copy = dcopy("a")
-    t.deepEqual(copy, "a")
+    var copy = dcopy('a')
+    t.deepEqual(copy, 'a')
   })
 
   it('preserve booleans', function () {
