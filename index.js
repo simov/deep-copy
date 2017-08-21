@@ -23,6 +23,9 @@
     if (/number|string|boolean/.test(typeof target)) {
       return target
     }
+    if (target instanceof Date) {
+      return new Date(target.getTime())
+    }
     var copy = (target instanceof Array) ? [] : {}
     ;(function read (target, copy) {
       for (var key in target) {
@@ -31,6 +34,10 @@
           var value = []
           var last = add(copy, key, value)
           read(obj, last)
+        }
+        else if (obj instanceof Date) {
+          var value = new Date(obj.getTime())
+          add(copy, key, value)
         }
         else if (obj instanceof Object && typeof obj !== 'function') {
           var value = {}
