@@ -11,7 +11,8 @@ describe('deep-copy', function () {
       a: 0,
       b: 1,
     },
-    d: function () {}
+    d: function () {},
+    e: new Date(2017, 0, 1)
   }
   var arr = [
     0,
@@ -21,7 +22,8 @@ describe('deep-copy', function () {
       b: {
         c: 1
       }
-    }
+    },
+    new Date(2017, 0, 1)
   ]
 
   it('deep copy object', function () {
@@ -38,6 +40,11 @@ describe('deep-copy', function () {
     t.deepEqual(copy[2].b, {d: 15})
   })
 
+  it('deep copy date', function () {
+    var copy = dcopy(obj)
+    t.deepEqual(copy.e.getTime(), new Date(2017, 0, 1).getTime())
+  })
+
   it('preserve numbers', function () {
     var copy = dcopy(42)
     t.deepEqual(copy, 42)
@@ -51,6 +58,14 @@ describe('deep-copy', function () {
   it('preserve booleans', function () {
     var copy = dcopy(true)
     t.deepEqual(copy, true)
+  })
+
+  it('preserve dates', function () {
+    var date = new Date(2017, 5, 1)
+    var copy = dcopy(date)
+    date.setMonth(0)
+    t.notDeepEqual(date.getTime(), new Date(2017, 5, 1).getTime())
+    t.deepEqual(copy.getTime(), new Date(2017, 5, 1).getTime())
   })
 
   it('preserve functions', function () {
