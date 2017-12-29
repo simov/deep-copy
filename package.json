@@ -22,6 +22,7 @@
     "mocha": "^3.2.0"
   },
   "main": "index.js",
+  "typings": "index.d.ts",
   "files": [
     "LICENSE",
     "README.md",
