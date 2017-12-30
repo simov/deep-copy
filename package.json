@@ -1,6 +1,6 @@
 {
   "name": "deep-copy",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Deep copy objects and arrays",
   "keywords": [
     "deep",
